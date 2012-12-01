@@ -37,10 +37,16 @@ std::string getKey( HKEY hKey, const std::wstring& value ) {
     if( RegQueryValueExW( hKey, value.c_str(), 0, NULL, NULL, &size ) == ERROR_SUCCESS ) {
         result.resize( size / 2 );
         RegQueryValueExW( hKey, value.c_str(), 0, NULL, ( LPBYTE )result.c_str(), &size );
-
     };
 
-    return toString( result );
+    std::string path = toString( result );
+
+    // remove last zero
+    if( ! path.empty() ) {
+        path.resize( path.size() - 1 );
+    }
+
+    return path;
 }
 
 bool setKey( HKEY hKey, const std::wstring& value,  const std::string& data ) {
