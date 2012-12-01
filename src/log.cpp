@@ -1,3 +1,10 @@
+// Copyright 2012 FD Imaging
+// All rights reserved.
+//
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
 
 #include <iostream>
 #include <fstream>
@@ -10,7 +17,6 @@
 
 #include <time.h>
 
-/// \return The clock cycle in milliseconds
 unsigned long getTime() {
     clock_t time = clock();
     time *= 1000;

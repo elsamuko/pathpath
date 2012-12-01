@@ -1,3 +1,10 @@
+// Copyright 2012 FD Imaging
+// All rights reserved.
+//
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
 
 #include <iostream>
 #include <vector>
@@ -10,7 +17,6 @@
 #include "io.h"
 
 void usage() {
-
     LOG( "Usage: pathpath.exe read/write" );
     LOG( "Read needs no admin rights and writes all path variables to \"path.txt\"" );
     LOG( "Write needs admin rights and reads all path variables from \"path.txt\"" );
