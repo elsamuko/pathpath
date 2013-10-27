@@ -7,6 +7,7 @@ IF %ERRORLEVEL% EQU 0 (
 
 	cd %~dp0
 	pathpath.exe write
+	call apply.bat
     PAUSE
 
 ) ELSE (
