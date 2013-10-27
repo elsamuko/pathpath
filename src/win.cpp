@@ -83,7 +83,7 @@ std::vector< std::string > readPath() {
     return paths;
 }
 
-void writePath( const std::vector< std::string >& paths ) {
+std::string writePath( const std::vector< std::string >& paths ) {
     HKEY hKey = 0;
 
     LONG lRes = RegOpenKeyExW( HKEY_LOCAL_MACHINE, L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", 0, KEY_WRITE, &hKey );
@@ -99,4 +99,6 @@ void writePath( const std::vector< std::string >& paths ) {
     }
 
     RegCloseKey( hKey );
+
+    return path;
 }

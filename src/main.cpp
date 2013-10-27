@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 #include <boost/algorithm/string/join.hpp>
 #include <boost/algorithm/string.hpp>
@@ -43,7 +44,14 @@ int main( int argc, char* argv[] ) {
         boost::split( paths, path, boost::is_any_of( "\n\r" ), boost::token_compress_on );
 
         if( !paths.empty() ) {
-            writePath( paths );
+            std::string path = writePath( paths );
+
+            std::stringstream apply;
+            apply << "@echo off\r\n"
+                  << "set path =\"" << path << "\"\r\n"
+                  << "@echo on\r\n";
+            writeFile( "apply.bat", apply.str() );
+
         } else {
             LOG( "Could not read \"path.txt\"" );
         }
