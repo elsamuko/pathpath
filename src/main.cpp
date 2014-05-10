@@ -48,7 +48,7 @@ int main( int argc, char* argv[] ) {
 
             std::stringstream apply;
             apply << "@echo off\r\n"
-                  << "set path =\"" << path << "\"\r\n"
+                  << "setx PATH \"" << path << "\"\r\n"
                   << "@echo on\r\n";
             writeFile( "apply.bat", apply.str() );
 
