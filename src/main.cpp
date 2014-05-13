@@ -45,13 +45,6 @@ int main( int argc, char* argv[] ) {
 
         if( !paths.empty() ) {
             std::string path = writePath( paths );
-
-            std::stringstream apply;
-            apply << "@echo off\r\n"
-                  << "setx PATH \"" << path << "\"\r\n"
-                  << "@echo on\r\n";
-            writeFile( "apply.bat", apply.str() );
-
         } else {
             LOG( "Could not read \"path.txt\"" );
         }

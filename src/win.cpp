@@ -17,6 +17,7 @@
 #include "log.h"
 
 #pragma comment( lib, "advapi32.lib" )
+#pragma comment( lib, "user32.lib" )
 
 std::string toString( const std::wstring& wide ) {
     return std::string( wide.begin(), wide.end() );
@@ -99,6 +100,11 @@ std::string writePath( const std::vector< std::string >& paths ) {
     }
 
     RegCloseKey( hKey );
+
+    // http://stackoverflow.com/a/7547964/1942555
+    LOG( "Refreshing environment..." );
+    SendMessageTimeout( HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM) "Environment", SMTO_ABORTIFHUNG, 1000, NULL );
+    SendMessageTimeout( HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM) L"Environment", SMTO_ABORTIFHUNG, 1000, NULL );
 
     return path;
 }
