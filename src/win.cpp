@@ -53,7 +53,7 @@ bool setKey( HKEY hKey, const std::wstring& value,  const std::string& data ) {
 
     std::wstring dataw = fromString( data );
 
-    LONG ok = RegSetValueEx( hKey, value.c_str(), 0, REG_SZ, ( LPBYTE )dataw.c_str(), dataw.size() * 2 );
+    LONG ok = RegSetValueEx( hKey, value.c_str(), 0, REG_EXPAND_SZ, ( LPBYTE )dataw.c_str(), dataw.size() * 2 );
 
     return ok == ERROR_SUCCESS;
 }
