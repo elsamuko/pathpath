@@ -27,8 +27,6 @@ You can use the program via batch script as in the read.bat write.bat examples.
 Files
 ============
 src          - contains the source code of pathpath.exe
-msvcp100.dll - Microsoft Visual C++ 2010 Redistributable Library
-msvcr100.dll - Microsoft Visual C++ 2010 Redistributable Library
 pathpath.exe - The program
 read.bat     - Sample batch file to read the %PATH% environment variable 
 write.bat    - Sample batch file to write the %PATH% environment variable
@@ -37,7 +35,7 @@ README.txt   - This file
 
 Build
 ============
-If you don't trust this program, you can compile it on your own.
-To build this program, you need Visual Studio 2010 and v1.51.0 of the BOOST C++ library.
+You can compile this program on your own.
+To build this program, you need Visual Studio, qmake and the BOOST C++ library.
 
 
